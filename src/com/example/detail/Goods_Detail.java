@@ -2,15 +2,12 @@ package com.example.detail;
 
 import cn.trinea.android.common.service.impl.ImageCache;
 import cn.trinea.android.common.util.CacheManager;
-
-import com.example.second_hand.MainActivity;
 import com.example.second_hand.R;
 import com.example.second_hand.SecondHand;
 import com.example.second_hand.Sell_Goods;
 import com.example.tools.HandlrGetData;
 import com.example.tools.HandlrGetData.onDataLoadListener;
 import com.example.tools.ViewPageImageAdapter;
-
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -105,7 +102,7 @@ public class Goods_Detail extends ActionBarActivity implements
 			}
 			group.addView(imageView);
 		}
-		viewPager.setAdapter(new ViewPageImageAdapter(Goods_Detail.this, urls));
+		viewPager.setAdapter(new ViewPageImageAdapter(urls));
 		viewPager.setOnPageChangeListener(this);
 		viewPager.setCurrentItem(0);
 	}

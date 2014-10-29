@@ -3,9 +3,6 @@ package com.example.tools;
 
 import com.example.detail.Goods_Detail;
 import com.example.second_hand.R;
-import com.squareup.picasso.Picasso;
-
-import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +11,10 @@ import android.widget.ImageView;
 
 public class ViewPageImageAdapter extends PagerAdapter{
 	
-	private Context context;
 	private String[] urls;
 	
-    public ViewPageImageAdapter(Context context,String[] urls) {
+    public ViewPageImageAdapter(String[] urls) {
 		// TODO Auto-generated constructor stub
-    	this.context = context;
     	this.urls = urls;
 	}
 
@@ -34,7 +29,6 @@ public class ViewPageImageAdapter extends PagerAdapter{
 		final ImageView imageView = new ImageView(container.getContext());
 		container.addView(imageView,LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
 		imageView.setImageResource(R.drawable.icampusimgplaceholder);
-		//Picasso.with(context).load(urls[position]).into(imageView);
 		Goods_Detail.IMAGE_CACHE.get(urls[position%urls.length], imageView);
 		return imageView;
 	}
